@@ -24,18 +24,18 @@ composer require minetro/doctrine-extensions
 
 ## Inspired
 
-Heavily inspired by these plugin, thank you guys.
+Heavily inspired by these plugins, thank you guys.
 
 - https://github.com/stof/StofDoctrineExtensionsBundle
 - https://github.com/rixxi/gedmo
 
 ## Dependencies
 
-| Package                   | Version        |
-|---------------------------|----------------|
-| nette/di                  | ~2.3.0\|~2.4.0 |
-| kdyby/doctrine            | >=3.0.0        |
-| gedmo/doctrine-extensions | ~2.4.0         |
+| Package                   | Version          |
+|---------------------------|------------------|
+| nette/di                  | ~2.3.0 \| ~2.4.0 |
+| kdyby/doctrine            | >=3.0.0          |
+| gedmo/doctrine-extensions | ~2.4.0           |
 
 ## Usage
 
