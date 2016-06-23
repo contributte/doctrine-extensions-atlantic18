@@ -1,6 +1,6 @@
 {
   "name": "minetro/doctrine-extensions",
-  "description": "Doctrine2 ",
+  "description": "Doctrine2 behavioral extensions for Nette Framework",
   "type": "library",
   "license": ["BSD-3-Clause"],
   "homepage": "https://github.com/minetro/doctrine-extensions",
