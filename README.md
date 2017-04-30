@@ -6,11 +6,11 @@ Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-Nest
 
 -----
 
-[![Build Status](https://img.shields.io/travis/minetro/doctrine-extensions?style=flat-square)](https://travis-ci.org/minetro/doctrine-extensions)
-[![Code coverage](https://img.shields.io/coveralls/minetro/doctrine-extensions?style=flat-square)](https://coveralls.io/r/minetro/doctrine-extensions)
-[![Downloads total](https://img.shields.io/packagist/dt/minetro/doctrine-extensions?style=flat-square)](https://packagist.org/packages/minetro/doctrine-extensions)
-[![Latest stable](https://img.shields.io/packagist/v/minetro/doctrine-extensions?style=flat-square)](https://packagist.org/packages/minetro/doctrine-extensions)
-[![HHVM Status](https://img.shields.io/hhvm/minetro/doctrine-extensions?style=flat-square)](http://hhvm.h4cc.de/package/minetro/doctrine-extensions)
+[![Build Status](https://img.shields.io/travis/minetro/doctrine-extensions.svg?style=flat-square)](https://travis-ci.org/minetro/doctrine-extensions)
+[![Code coverage](https://img.shields.io/coveralls/minetro/doctrine-extensions.svg?style=flat-square)](https://coveralls.io/r/minetro/doctrine-extensions)
+[![Downloads total](https://img.shields.io/packagist/dt/minetro/doctrine-extensions.svg?style=flat-square)](https://packagist.org/packages/minetro/doctrine-extensions)
+[![Latest stable](https://img.shields.io/packagist/v/minetro/doctrine-extensions.svg?style=flat-square)](https://packagist.org/packages/minetro/doctrine-extensions)
+[![HHVM Status](https://img.shields.io/hhvm/minetro/doctrine-extensions.svg?style=flat-square)](http://hhvm.h4cc.de/package/minetro/doctrine-extensions)
 
 ## Discussion / Help
 
