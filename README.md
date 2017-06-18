@@ -45,7 +45,7 @@ By default, all behavioral extensions are enabled.
 
 ```yaml
 extensions:
-    gedmo: Minetro\DoctrineExtensions\DI\DoctrineExtensionsExtension
+    gedmo: Nettrine\Extensions\DI\DoctrineExtensionsExtension
 
 gedmo: 
     translatable:

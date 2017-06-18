@@ -1,6 +1,6 @@
 <?php
 
-namespace Minetro\DoctrineExtensions\DI;
+namespace Nettrine\Extensions\DI;
 
 use Doctrine\Common\Annotations\Reader;
 use Gedmo\Blameable\BlameableListener;
