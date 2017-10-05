@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Minetro\\DoctrineExtensions\\DI\\": "src/"
+      "Nettrine\\Extensions\\DI\\": "src/"
     }
   }
 }
