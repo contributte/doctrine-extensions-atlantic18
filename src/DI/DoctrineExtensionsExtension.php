@@ -49,6 +49,8 @@ final class DoctrineExtensionsExtension extends CompilerExtension implements IEn
 
 	/**
 	 * Register services
+	 *
+	 * @return void
 	 */
 	public function loadConfiguration()
 	{
