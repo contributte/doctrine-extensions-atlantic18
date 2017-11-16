@@ -55,7 +55,7 @@ gedmo:
         persistDefaultTranslation: off
         skipOnLoad: off
 
-    annotations 
+    annotations:
         loggable: on
         sluggable: on
         softDeleteable: on
