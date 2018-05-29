@@ -18,13 +18,14 @@
   "require": {
     "php": ">=7.1",
     "nette/di": "~2.4.12",
-    "nettrine/orm": "^0.1",
+    "doctrine/orm": "^2.5.0 || ^2.6.0",
     "doctrine/annotations": "^1.6.0",
     "gedmo/doctrine-extensions": "^2.4.35"
   },
   "require-dev": {
     "ninjify/qa": "^0.8.0",
-    "ninjify/nunjuck": "^0.2.0"
+    "ninjify/nunjuck": "^0.2.0",
+    "nettrine/orm": "^0.1 || ^0.2"
   },
   "autoload": {
     "psr-4": {
