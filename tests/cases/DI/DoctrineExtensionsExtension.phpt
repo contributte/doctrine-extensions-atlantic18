@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 /**
  * Test: DI\DoctrineExtensionsExtension
@@ -13,27 +13,26 @@ use Tester\FileMock;
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-test(function () {
-	$loader = new ContainerLoader(TEMP_DIR, TRUE);
-	$class = $loader->load(function (Compiler $compiler) {
+test(function (): void {
+	$loader = new ContainerLoader(TEMP_DIR, true);
+	$class = $loader->load(function (Compiler $compiler): void {
 		$compiler->addExtension('extensions', new DoctrineExtensionsExtension());
 		$compiler->loadConfig(FileMock::create('
 			extensions:
-				annotations:
-					loggable: false
-					sluggable: false
-					softDeleteable: false
-					treeable: false
-					blameable: false
-					timestampable: false
-					translatable: false
-					uploadable: false
-					sortable: false
-					ipTraceable: false
+				loggable: false
+				sluggable: false
+				softDeleteable: false
+				treeable: false
+				blameable: false
+				timestampable: false
+				translatable: false
+				uploadable: false
+				sortable: false
+				ipTraceable: false
 		', 'neon'));
 	}, '1a');
 
 	/** @var Container $container */
-	$container = new $class;
+	$container = new $class();
 	Assert::type(Container::class, $container);
 });

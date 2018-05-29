@@ -2,8 +2,6 @@
 
 Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/Atlantic18/DoctrineExtensions) to Nette Framework.
 
-> Adapt to Nette Framework (**2.3**, **2.4**)
-
 -----
 
 [![Build Status](https://img.shields.io/travis/nettrine/extensions.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions)
@@ -13,11 +11,10 @@ Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-Nest
 [![Downloads this Month](https://img.shields.io/packagist/dm/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
 [![Downloads total](https://img.shields.io/packagist/dt/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
 [![Latest stable](https://img.shields.io/packagist/v/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
-[![Latest unstable](https://img.shields.io/packagist/vpre/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
 
 ## Discussion / Help
 
-[![Join the chat](https://img.shields.io/gitter/room/nettrine/nettrine.svg?style=flat-square)](http://bit.ly/nettrine)
+[![Join the chat](https://img.shields.io/gitter/room/nettrine/nettrine.svg?style=flat-square)](https://gitter.im/nettrine/nettrine)
 
 ## Install
 
@@ -25,48 +22,20 @@ Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-Nest
 composer require nettrine/extensions
 ```
 
-## Dependencies
+## Versions
 
-| Package                   | Version          |
-|---------------------------|------------------|
-| nette/di                  | ~2.3.0 \| ~2.4.0 |
-| gedmo/doctrine-extensions | ~2.4.0           |
+| State       | Version       | Branch   | PHP      |
+|-------------|---------------|----------|----------|
+| dev         | `dev-master`  | `master` | `>= 7.1` |
+| stable      | `^0.3`        | `master` | `>= 7.1` |
+| stable      | `^0.2`        | `master` | `>= 5.6` |
 
-## Inspired
+## Overview
 
-Heavily inspired by these plugins, thank you guys.
 
-- https://github.com/stof/StofDoctrineExtensionsBundle
-- https://github.com/rixxi/gedmo
-
-## Usage
-
-By default, all behavioral extensions are enabled.
-
-```yaml
-extensions:
-    gedmo: Nettrine\Extensions\DI\DoctrineExtensionsExtension
-
-gedmo: 
-    translatable:
-        translatable: cs_CZ
-        default: cs_CZ
-        translationFallback: off
-        persistDefaultTranslation: off
-        skipOnLoad: off
-
-    annotations:
-        loggable: on
-        sluggable: on
-        softDeleteable: on
-        treeable: on
-        blameable: on
-        timestampable: on
-        translatable: on
-        uploadable: on
-        sortable: on
-        ipTraceable: on
-```
+- [Minimal configuration](https://github.com/nettrine/extensions/blob/master/.docs/README.md#configuration)
+- Listeners
+    - [Translatable](https://github.com/nettrine/extensions/blob/master/.docs/README.md#translatable)
 
 ## Maintainers
 
