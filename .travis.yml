@@ -9,7 +9,7 @@ install:
 
 script:
   # PhpUnit
-  - composer run-script phpunit
+  - composer run-script tester
 
 jobs:
   include:
