@@ -50,6 +50,16 @@ orm.annotations:
         - Gedmo\Tree\Entity
 ```
 
+If you using `nettrine/dbal` all listeners are registered automatically, or you have to register it manually: 
+
+```php
+// Get EventManager, from DI or Entity Manager
+$evm = $em->getEventManager();
+
+// Register desired listener to event
+$evm->addEventSubscriber($listener); 
+
+```
 ## Listeners
 
 ### [Translatable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/translatable.md)

@@ -17,6 +17,8 @@ use Nette\DI\CompilerExtension;
 class DoctrineExtensionsExtension extends CompilerExtension
 {
 
+	public const TAG_NETTRINE_SUBSCRIBER = 'nettrine.subscriber';
+
 	/** @var mixed[] */
 	private $defaults = [
 		'loggable' => false,
@@ -52,7 +54,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['loggable'] !== false) {
 			$builder->addDefinition($this->prefix('loggable'))
 				->setClass(LoggableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Sluggable =================================================
@@ -60,7 +63,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['sluggable'] !== false) {
 			$builder->addDefinition($this->prefix('sluggable'))
 				->setClass(SluggableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// SoftDeleteable ============================================
@@ -68,7 +72,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['softDeleteable'] !== false) {
 			$builder->addDefinition($this->prefix('softDeleteable'))
 				->setClass(SoftDeleteableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Treeable ==================================================
@@ -76,7 +81,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['treeable'] !== false) {
 			$builder->addDefinition($this->prefix('treeable'))
 				->setClass(TreeListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Blameable =================================================
@@ -84,7 +90,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['blameable'] !== false) {
 			$builder->addDefinition($this->prefix('blameable'))
 				->setClass(BlameableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Timestampable =============================================
@@ -92,7 +99,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['timestampable'] !== false) {
 			$builder->addDefinition($this->prefix('timestampable'))
 				->setClass(TimestampableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Translatable ==============================================
@@ -106,7 +114,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 				->addSetup('setTranslatableLocale', [$translatableConfig['translatable']])
 				->addSetup('setPersistDefaultLocaleTranslation', [$translatableConfig['translationFallback']])
 				->addSetup('setTranslationFallback', [$translatableConfig['persistDefaultTranslation']])
-				->addSetup('setSkipOnLoad', [$translatableConfig['skipOnLoad']]);
+				->addSetup('setSkipOnLoad', [$translatableConfig['skipOnLoad']])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Sortable ==================================================
@@ -114,7 +123,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['sortable'] !== false) {
 			$builder->addDefinition($this->prefix('sortable'))
 				->setClass(SortableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// IpTraceable ===============================================
@@ -122,7 +132,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 		if ($config['ipTraceable'] !== false) {
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setClass(IpTraceableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 	}
 
