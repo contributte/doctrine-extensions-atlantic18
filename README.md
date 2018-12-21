@@ -7,10 +7,10 @@ Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-Nest
 [![Build Status](https://img.shields.io/travis/nettrine/extensions.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions)
 [![Code coverage](https://img.shields.io/coveralls/nettrine/extensions.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions)
 [![Licence](https://img.shields.io/packagist/l/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
-
 [![Downloads this Month](https://img.shields.io/packagist/dm/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
 [![Downloads total](https://img.shields.io/packagist/dt/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
 [![Latest stable](https://img.shields.io/packagist/v/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
 ## Discussion / Help
 
@@ -26,7 +26,7 @@ composer require nettrine/extensions
 
 | State       | Version       | Branch   | PHP      |
 |-------------|---------------|----------|----------|
-| dev         | `dev-master`  | `master` | `>= 7.1` |
+| dev         | `^0.4`        | `master` | `>= 7.1` |
 | stable      | `^0.3`        | `master` | `>= 7.1` |
 | stable      | `^0.2`        | `master` | `>= 5.6` |
 
@@ -57,7 +57,7 @@ composer require nettrine/extensions
         <a href="https://github.com/benijo">Josef Benjač</a>
       </td>
     </tr>
-  <tbody>
+  </tbody>
 </table>
 
 ---
