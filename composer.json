@@ -26,10 +26,10 @@
     "ninjify/qa": "^0.8.0",
     "ninjify/nunjuck": "^0.2.0",
     "nettrine/orm": "^0.1 || ^0.2",
-    "phpstan/phpstan-shim": "^0.10.6",
-    "phpstan/phpstan-deprecation-rules": "^0.10.2",
-    "phpstan/phpstan-nette": "^0.10.1",
-    "phpstan/phpstan-strict-rules": "^0.10.1"
+    "phpstan/phpstan-shim": "^0.11",
+    "phpstan/phpstan-deprecation-rules": "^0.11",
+    "phpstan/phpstan-nette": "^0.11",
+    "phpstan/phpstan-strict-rules": "^0.11"
   },
   "autoload": {
     "psr-4": {
