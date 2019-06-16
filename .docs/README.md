@@ -1,24 +1,34 @@
-# Nettrine / Extensions
+# Nettrine Gedmo Extensions
+
+Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/Atlantic18/DoctrineExtensions) to Nette Framework.
 
 ## Content
 
-- [Minimal configuration](#configuration)
-- Listeners
+- [Setup](#setup)
+- [Configuration](#configuration)
+    - [Loggable, Translatable, Treeable](#loggable-translatable-treeable)
     - [Translatable](#translatable)
 
-## Minimal configuration
+## Setup
 
-At first, you will needed Doctrine ORM/DBAL extension. Take a look at [Nettrine/ORM](https://github.com/nettrine/orm)
-and [Nettrine/DBAL](https://github.com/nettrine/dbal) in this organization. 
+First of all, install and configure [Nettrine DBAL](https://github.com/nettrine/dbal) and [Nettrine ORM](https://github.com/nettrine/orm) packages`.
 
-Secondly, place `DoctrineExtensionsExtension` in your NEON config file.
+Install package
+
+```bash
+composer require nettrine/extensions
+```
+
+Register extension
 
 ```yaml
 extensions:
     nettrine.extensions: Nettrine\Extensions\DI\DoctrineExtensionsExtension 
 ```
 
-And setup listeners. By default all listeners are disabled, enable only required listeners.
+## Configuration
+
+Configure listeners. By default all listeners are disabled, enable only required listeners.
 
 ```yaml
 nettrine.extensions: 
@@ -34,7 +44,9 @@ nettrine.extensions:
     ipTraceable: off
 ```
 
-For **loggable**, **translatable** and **treeable** you gonna needed to setup extra entity mapping.
+### Loggable, Translatable, Treeable
+
+Setup extra entity mapping.
 
 ```yaml
 extensions:
@@ -60,8 +72,6 @@ $evm = $em->getEventManager();
 $evm->addEventSubscriber($listener); 
 
 ```
-## Listeners
-
 ### [Translatable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/translatable.md)
 
 TranslatableListener has a complex configuration:
