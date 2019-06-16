@@ -1,8 +1,6 @@
-# Doctrine Extensions
+# Nettrine Gedmo Extensions
 
 Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/Atlantic18/DoctrineExtensions) to Nette Framework.
-
------
 
 [![Build Status](https://img.shields.io/travis/nettrine/extensions.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions)
 [![Code coverage](https://img.shields.io/coveralls/nettrine/extensions.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions)
@@ -16,11 +14,12 @@ Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-Nest
 
 [![Join the chat](https://img.shields.io/gitter/room/nettrine/nettrine.svg?style=flat-square)](https://gitter.im/nettrine/nettrine)
 
-## Install
+## Overview
 
-```sh
-composer require nettrine/extensions
-```
+- [Setup](.docs/README.md#setup)
+- [Configuration](.docs/README.md#configuration)
+    - [Loggable, Translatable, Treeable](.docs/README.md#loggable-translatable-treeable)
+    - [Translatable](.docs/README.md#translatable)
 
 ## Versions
 
@@ -29,13 +28,6 @@ composer require nettrine/extensions
 | dev         | `^0.4`        | `master` | `>= 7.1` |
 | stable      | `^0.3`        | `master` | `>= 7.1` |
 | stable      | `^0.2`        | `master` | `>= 5.6` |
-
-## Overview
-
-
-- [Minimal configuration](https://github.com/nettrine/extensions/blob/master/.docs/README.md#configuration)
-- Listeners
-    - [Translatable](https://github.com/nettrine/extensions/blob/master/.docs/README.md#translatable)
 
 ## Maintainers
 
@@ -59,7 +51,5 @@ composer require nettrine/extensions
     </tr>
   </tbody>
 </table>
-
----
 
 Thank you for testing, reporting and contributing.
