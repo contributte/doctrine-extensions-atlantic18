@@ -35,8 +35,8 @@ class DoctrineExtensionsExtension extends CompilerExtension
 			'blameable' => Expect::bool(false),
 			'timestampable' => Expect::bool(false),
 			'translatable' => Expect::anyOf(false, Expect::structure([
-				'translatable' => Expect::string('cs_CZ'),
-				'default' => Expect::string('cs_CZ'),
+				'translatable' => Expect::string()->required(),
+				'default' => Expect::string()->required(),
 				'translationFallback' => Expect::bool(false),
 				'persistDefaultTranslation' => Expect::bool(false),
 				'skipOnLoad' => Expect::bool(false),
