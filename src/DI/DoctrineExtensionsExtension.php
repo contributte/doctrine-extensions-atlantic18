@@ -13,45 +13,48 @@ use Gedmo\Timestampable\TimestampableListener;
 use Gedmo\Translatable\TranslatableListener;
 use Gedmo\Tree\TreeListener;
 use Nette\DI\CompilerExtension;
+use Nette\Schema\Expect;
+use Nette\Schema\Schema;
+use stdClass;
 
+/**
+ * @property-read stdClass $config
+ */
 class DoctrineExtensionsExtension extends CompilerExtension
 {
 
 	public const TAG_NETTRINE_SUBSCRIBER = 'nettrine.subscriber';
 
-	/** @var mixed[] */
-	private $defaults = [
-		'loggable' => false,
-		'sluggable' => false,
-		'softDeleteable' => false,
-		'treeable' => false,
-		'blameable' => false,
-		'timestampable' => false,
-		'translatable' => false,
-		'uploadable' => false,
-		'sortable' => false,
-		'ipTraceable' => false,
-	];
-
-	/** @var mixed[] */
-	private $defaultsListeners = [
-		'translatable' => [
-			'translatable' => 'cs_CZ',
-			'default' => 'cs_CZ',
-			'translationFallback' => false,
-			'persistDefaultTranslation' => false,
-			'skipOnLoad' => false,
-		],
-	];
+	public function getConfigSchema(): Schema
+	{
+		return Expect::structure([
+			'loggable' => Expect::bool(false),
+			'sluggable' => Expect::bool(false),
+			'softDeleteable' => Expect::bool(false),
+			'treeable' => Expect::bool(false),
+			'blameable' => Expect::bool(false),
+			'timestampable' => Expect::bool(false),
+			'translatable' => Expect::anyOf(false, Expect::structure([
+				'translatable' => Expect::string('cs_CZ'),
+				'default' => Expect::string('cs_CZ'),
+				'translationFallback' => Expect::bool(false),
+				'persistDefaultTranslation' => Expect::bool(false),
+				'skipOnLoad' => Expect::bool(false),
+			]))->default(false),
+			'uploadable' => Expect::bool(false),
+			'sortable' => Expect::bool(false),
+			'ipTraceable' => Expect::bool(false),
+		]);
+	}
 
 	public function loadConfiguration(): void
 	{
-		$config = $this->validateConfig($this->defaults);
 		$builder = $this->getContainerBuilder();
+		$config = $this->config;
 
 		// Loggable ==================================================
 
-		if ($config['loggable'] !== false) {
+		if ($config->loggable) {
 			$builder->addDefinition($this->prefix('loggable'))
 				->setFactory(LoggableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -60,7 +63,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// Sluggable =================================================
 
-		if ($config['sluggable'] !== false) {
+		if ($config->sluggable) {
 			$builder->addDefinition($this->prefix('sluggable'))
 				->setFactory(SluggableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -69,7 +72,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// SoftDeleteable ============================================
 
-		if ($config['softDeleteable'] !== false) {
+		if ($config->softDeleteable) {
 			$builder->addDefinition($this->prefix('softDeleteable'))
 				->setFactory(SoftDeleteableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -78,7 +81,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// Treeable ==================================================
 
-		if ($config['treeable'] !== false) {
+		if ($config->treeable) {
 			$builder->addDefinition($this->prefix('treeable'))
 				->setFactory(TreeListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -87,7 +90,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// Blameable =================================================
 
-		if ($config['blameable'] !== false) {
+		if ($config->blameable) {
 			$builder->addDefinition($this->prefix('blameable'))
 				->setFactory(BlameableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -96,7 +99,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// Timestampable =============================================
 
-		if ($config['timestampable'] !== false) {
+		if ($config->timestampable) {
 			$builder->addDefinition($this->prefix('timestampable'))
 				->setFactory(TimestampableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -105,22 +108,22 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// Translatable ==============================================
 
-		if ($config['translatable'] !== false) {
-			$translatableConfig = $this->validateConfig($this->defaultsListeners['translatable'], $config['translatable']);
+		if ($config->translatable !== false) {
+			$translatableConfig = $config->translatable;
 			$builder->addDefinition($this->prefix('translatable'))
 				->setFactory(TranslatableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addSetup('setDefaultLocale', [$translatableConfig['default']])
-				->addSetup('setTranslatableLocale', [$translatableConfig['translatable']])
-				->addSetup('setPersistDefaultLocaleTranslation', [$translatableConfig['translationFallback']])
-				->addSetup('setTranslationFallback', [$translatableConfig['persistDefaultTranslation']])
-				->addSetup('setSkipOnLoad', [$translatableConfig['skipOnLoad']])
+				->addSetup('setDefaultLocale', [$translatableConfig->default])
+				->addSetup('setTranslatableLocale', [$translatableConfig->translatable])
+				->addSetup('setPersistDefaultLocaleTranslation', [$translatableConfig->translationFallback])
+				->addSetup('setTranslationFallback', [$translatableConfig->persistDefaultTranslation])
+				->addSetup('setSkipOnLoad', [$translatableConfig->skipOnLoad])
 				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 
 		// Sortable ==================================================
 
-		if ($config['sortable'] !== false) {
+		if ($config->sortable) {
 			$builder->addDefinition($this->prefix('sortable'))
 				->setFactory(SortableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
@@ -129,7 +132,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 
 		// IpTraceable ===============================================
 
-		if ($config['ipTraceable'] !== false) {
+		if ($config->ipTraceable) {
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setFactory(IpTraceableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
