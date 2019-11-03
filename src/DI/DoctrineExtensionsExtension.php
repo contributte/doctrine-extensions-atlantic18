@@ -136,6 +136,7 @@ class DoctrineExtensionsExtension extends CompilerExtension
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setFactory(IpTraceableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addSetup('setIpValue', ['@Nette\Http\Request::remoteAddress'])
 				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 	}
