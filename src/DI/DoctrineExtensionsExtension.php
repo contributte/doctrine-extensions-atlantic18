@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Nettrine\Extensions\DI;
+namespace Nettrine\Extensions\Atlantic18\DI;
 
 use Doctrine\Common\Annotations\Reader;
 use Gedmo\Blameable\BlameableListener;

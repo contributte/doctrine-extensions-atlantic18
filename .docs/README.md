@@ -16,14 +16,14 @@ First of all, install and configure [Nettrine DBAL](https://github.com/nettrine/
 Install package
 
 ```bash
-composer require nettrine/extensions
+composer require nettrine/extensions-atlantic18
 ```
 
 Register extension
 
 ```yaml
 extensions:
-    nettrine.extensions: Nettrine\Extensions\DI\DoctrineExtensionsExtension 
+    nettrine.extensions: Nettrine\Extensions\Atlantic18\DI\DoctrineExtensionsExtension 
 ```
 
 ## Configuration

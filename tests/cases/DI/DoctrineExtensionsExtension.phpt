@@ -7,7 +7,7 @@
 use Nette\DI\Compiler;
 use Nette\DI\Container;
 use Nette\DI\ContainerLoader;
-use Nettrine\Extensions\DI\DoctrineExtensionsExtension;
+use Nettrine\Extensions\Atlantic18\DI\DoctrineExtensionsExtension;
 use Tester\Assert;
 use Tester\FileMock;
 
