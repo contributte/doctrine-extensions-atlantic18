@@ -2,12 +2,12 @@
 
 Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/Atlantic18/DoctrineExtensions) to Nette Framework.
 
-[![Build Status](https://img.shields.io/travis/nettrine/extensions.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions)
-[![Code coverage](https://img.shields.io/coveralls/nettrine/extensions.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions)
-[![Licence](https://img.shields.io/packagist/l/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
-[![Downloads this Month](https://img.shields.io/packagist/dm/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
-[![Downloads total](https://img.shields.io/packagist/dt/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
-[![Latest stable](https://img.shields.io/packagist/v/nettrine/extensions.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions)
+[![Build Status](https://img.shields.io/travis/nettrine/extensions-atlantic18.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions-atlantic18)
+[![Code coverage](https://img.shields.io/coveralls/nettrine/extensions-atlantic18.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions-atlantic18)
+[![Licence](https://img.shields.io/packagist/l/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
+[![Downloads this Month](https://img.shields.io/packagist/dm/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
+[![Downloads total](https://img.shields.io/packagist/dt/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
+[![Latest stable](https://img.shields.io/packagist/v/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
 ## Discussion / Help

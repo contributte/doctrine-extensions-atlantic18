@@ -7,9 +7,9 @@
     <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
         <properties>
             <property name="rootNamespaces" type="array" value="
-                src=>Nettrine\Extensions,
-                tests/cases=>Tests\Nettrine\Extensions\Cases,
-                tests/fixtures=>Tests\Nettrine\Extensions\Fixtures
+                src=>Nettrine\Extensions\Atlantic18,
+                tests/cases=>Tests\Nettrine\Extensions\Atlantic18\Cases,
+                tests/fixtures=>Tests\Nettrine\Extensions\Atlantic18\Fixtures
             "/>
         </properties>
     </rule>

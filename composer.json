@@ -1,10 +1,10 @@
 {
-  "name": "nettrine/extensions",
+  "name": "nettrine/extensions-atlantic18",
   "description": "Doctrine2 behavioral extensions for Nette Framework",
   "keywords": ["nette", "doctrine", "orm", "database"],
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/nettrine/extensions",
+  "homepage": "https://github.com/nettrine/extensions-atlantic18",
   "authors": [
     {
       "name": "Milan Felix Šulc",
@@ -34,12 +34,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Nettrine\\Extensions\\": "src/"
+      "Nettrine\\Extensions\\Atlantic18\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\Nettrine\\Extensions\\Cases\\": "tests/cases"
+      "Tests\\Nettrine\\Extensions\\Atlantic18\\Cases\\": "tests/cases"
     }
   },
   "minimum-stability": "dev",
