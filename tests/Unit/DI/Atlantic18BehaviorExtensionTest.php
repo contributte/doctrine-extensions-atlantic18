@@ -5,10 +5,10 @@ namespace Tests\Nettrine\Extensions\Atlantic18\Unit\DI;
 use Nette\DI\Compiler;
 use Nette\DI\Container;
 use Nette\DI\ContainerLoader;
-use Nettrine\Extensions\Atlantic18\DI\DoctrineExtensionsExtension;
+use Nettrine\Extensions\Atlantic18\DI\Atlantic18BehaviorExtension;
 use PHPUnit\Framework\TestCase;
 
-final class DoctrineExtensionsExtensionTest extends TestCase
+final class Atlantic18BehaviorExtensionTest extends TestCase
 {
 
 	/**
@@ -18,7 +18,7 @@ final class DoctrineExtensionsExtensionTest extends TestCase
 	{
 		$loader = new ContainerLoader(__DIR__ . '/../../tmp', true);
 		$class = $loader->load(static function (Compiler $compiler): void {
-			$compiler->addExtension('extensions', new DoctrineExtensionsExtension());
+			$compiler->addExtension('extensions', new Atlantic18BehaviorExtension());
 		}, '1a');
 
 		$container = new $class();

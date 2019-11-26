@@ -20,7 +20,7 @@ use stdClass;
 /**
  * @property-read stdClass $config
  */
-class DoctrineExtensionsExtension extends CompilerExtension
+class Atlantic18BehaviorExtension extends CompilerExtension
 {
 
 	public const TAG_NETTRINE_SUBSCRIBER = 'nettrine.subscriber';
