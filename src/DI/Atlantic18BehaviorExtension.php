@@ -13,6 +13,7 @@ use Gedmo\Timestampable\TimestampableListener;
 use Gedmo\Translatable\TranslatableListener;
 use Gedmo\Tree\TreeListener;
 use Nette\DI\CompilerExtension;
+use Nette\DI\Definitions\Statement;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
 use stdClass;
@@ -43,7 +44,9 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 			]))->default(false),
 			'uploadable' => Expect::bool(false),
 			'sortable' => Expect::bool(false),
-			'ipTraceable' => Expect::bool(false),
+			'ipTraceable' => Expect::anyOf(false, Expect::structure([
+				'ipValue' => Expect::anyOf(Expect::string(), Expect::array(), Expect::type(Statement::class))->required(),
+			]))->default(false),
 		]);
 	}
 
@@ -132,11 +135,11 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 
 		// IpTraceable ===============================================
 
-		if ($config->ipTraceable) {
+		if ($config->ipTraceable !== false) {
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setFactory(IpTraceableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addSetup('setIpValue', !empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null)
+				->addSetup('setIpValue', $config->ipTraceable->ipValue)
 				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
 		}
 	}

@@ -8,6 +8,7 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
 - [Configuration](#configuration)
     - [Loggable, Translatable, Treeable](#loggable-translatable-treeable)
     - [Translatable](#translatable)
+    - [IpTraceable](#iptraceable)
 
 ## Setup
 
@@ -84,4 +85,14 @@ nettrine.extensions.atlantic18:
         translationFallback: off
         persistDefaultTranslation: off
         skipOnLoad: off
+```
+
+### [IpTraceable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/ip_traceable.md)
+
+IpTraceable requires client IP address:
+
+```
+nettrine.extensions.atlantic18:
+    ipTraceable:
+        ipValue: @Nette\Http\IRequest::getRemoteAddress()
 ```
