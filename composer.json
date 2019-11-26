@@ -18,19 +18,19 @@
   "require": {
     "php": "^7.2",
     "nette/di": "~3.0.0",
-    "doctrine/orm": "^2.5.0 || ^2.6.0",
+    "doctrine/orm": "^2.5.0",
     "doctrine/annotations": "^1.6.0",
     "gedmo/doctrine-extensions": "^2.4.35"
   },
   "require-dev": {
     "nettrine/orm": "^0.5.0",
-    "ninjify/nunjuck": "^0.2.0",
-    "ninjify/qa": "^0.9.0",
+    "ninjify/qa": "^0.10.0",
     "phpstan/extension-installer": "^1.0",
     "phpstan/phpstan-deprecation-rules": "^0.11",
     "phpstan/phpstan-nette": "^0.11",
     "phpstan/phpstan-shim": "^0.11",
-    "phpstan/phpstan-strict-rules": "^0.11"
+    "phpstan/phpstan-strict-rules": "^0.11",
+    "phpunit/phpunit": "^8.1.0"
   },
   "autoload": {
     "psr-4": {
@@ -39,7 +39,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\Nettrine\\Extensions\\Atlantic18\\Cases\\": "tests/cases"
+      "Tests\\Nettrine\\Extensions\\Atlantic18\\": "tests"
     }
   },
   "minimum-stability": "dev",

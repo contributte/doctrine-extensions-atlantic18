@@ -1,6 +1,6 @@
-# Nettrine Gedmo Extensions
+# Nettrine Extensions Atlantic18
 
-Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/Atlantic18/DoctrineExtensions) to Nette Framework.
+Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
 
 ## Content
 

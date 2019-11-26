@@ -1,6 +1,6 @@
-# Nettrine Gedmo Extensions
+# Nettrine Extensions Atlantic18
 
-Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-NestedSet, Timestampable, Loggable, Sortable](https://github.com/Atlantic18/DoctrineExtensions) to Nette Framework.
+Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
 
 [![Build Status](https://img.shields.io/travis/nettrine/extensions-atlantic18.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions-atlantic18)
 [![Code coverage](https://img.shields.io/coveralls/nettrine/extensions-atlantic18.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions-atlantic18)
@@ -43,11 +43,11 @@ Wrapper for [Doctrine2 behavioral extensions, Translatable, Sluggable, Tree-Nest
         <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
       </td>
       <td align="center">
-        <a href="https://github.com/benijo">
-            <img width="150" height="150" src="https://avatars3.githubusercontent.com/u/6731626?v=3&s=150">
+        <a href="https://github.com/mabar">
+            <img width="150" height="150" src="https://avatars0.githubusercontent.com/u/20974277?s=150&v=4">
         </a>
         </br>
-        <a href="https://github.com/benijo">Josef Benjač</a>
+        <a href="https://github.com/mabar">Marek Bartoš</a>
       </td>
     </tr>
   </tbody>
