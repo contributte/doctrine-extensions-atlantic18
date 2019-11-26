@@ -20,7 +20,8 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
 - [Configuration](.docs/README.md#configuration)
     - [Loggable, Translatable, Treeable](.docs/README.md#loggable-translatable-treeable)
     - [Translatable](.docs/README.md#translatable)
-
+    - [IpTraceable](.docs/README.md##iptraceable)
+    
 ## Versions
 
 | State       | Version     | Branch   | Nette  | PHP    |
