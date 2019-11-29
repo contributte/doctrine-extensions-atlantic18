@@ -24,8 +24,6 @@ use stdClass;
 class Atlantic18BehaviorExtension extends CompilerExtension
 {
 
-	public const TAG_NETTRINE_SUBSCRIBER = 'nettrine.subscriber';
-
 	public function getConfigSchema(): Schema
 	{
 		return Expect::structure([
@@ -55,61 +53,41 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 		$config = $this->config;
 
-		// Loggable ==================================================
-
 		if ($config->loggable) {
 			$builder->addDefinition($this->prefix('loggable'))
 				->setFactory(LoggableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// Sluggable =================================================
 
 		if ($config->sluggable) {
 			$builder->addDefinition($this->prefix('sluggable'))
 				->setFactory(SluggableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// SoftDeleteable ============================================
 
 		if ($config->softDeleteable) {
 			$builder->addDefinition($this->prefix('softDeleteable'))
 				->setFactory(SoftDeleteableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// Treeable ==================================================
 
 		if ($config->treeable) {
 			$builder->addDefinition($this->prefix('treeable'))
 				->setFactory(TreeListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// Blameable =================================================
 
 		if ($config->blameable) {
 			$builder->addDefinition($this->prefix('blameable'))
 				->setFactory(BlameableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// Timestampable =============================================
 
 		if ($config->timestampable) {
 			$builder->addDefinition($this->prefix('timestampable'))
 				->setFactory(TimestampableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// Translatable ==============================================
 
 		if ($config->translatable !== false) {
 			$translatableConfig = $config->translatable;
@@ -120,27 +98,20 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 				->addSetup('setTranslatableLocale', [$translatableConfig->translatable])
 				->addSetup('setPersistDefaultLocaleTranslation', [$translatableConfig->translationFallback])
 				->addSetup('setTranslationFallback', [$translatableConfig->persistDefaultTranslation])
-				->addSetup('setSkipOnLoad', [$translatableConfig->skipOnLoad])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setSkipOnLoad', [$translatableConfig->skipOnLoad]);
 		}
-
-		// Sortable ==================================================
 
 		if ($config->sortable) {
 			$builder->addDefinition($this->prefix('sortable'))
 				->setFactory(SortableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setAnnotationReader', ['@' . Reader::class]);
 		}
-
-		// IpTraceable ===============================================
 
 		if ($config->ipTraceable !== false) {
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setFactory(IpTraceableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addSetup('setIpValue', $config->ipTraceable->ipValue)
-				->addTag(self::TAG_NETTRINE_SUBSCRIBER);
+				->addSetup('setIpValue', $config->ipTraceable->ipValue);
 		}
 	}
 
