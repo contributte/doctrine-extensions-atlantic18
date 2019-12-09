@@ -111,7 +111,7 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setFactory(IpTraceableListener::class)
 				->addSetup('setAnnotationReader', ['@' . Reader::class])
-				->addSetup('setIpValue', $config->ipTraceable->ipValue);
+				->addSetup('setIpValue', [$config->ipTraceable->ipValue]);
 		}
 	}
 
