@@ -25,7 +25,7 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
 ## Versions
 
 | State       | Version     | Branch   | Nette  | PHP    ||
-|-------------|-------------|----------|--------|--------||
+|-------------|-------------|----------|--------|--------|-|
 | dev         | `^0.6`      | `master` | `3.0+` | `^7.2` ||
 | stable      | `^0.5`      | `master` | `3.0+` | `^7.2` ||
 | stable      | `^0.4`      | `master` | `3.0+` | `^7.2` | (old namespace) |
