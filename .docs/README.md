@@ -29,7 +29,7 @@ extensions:
 
 ## Configuration
 
-Configure listeners. By default all listeners are disabled, enable only required listeners.
+Configure listeners. By default all listeners are disabled, enable only the required ones.
 
 ```yaml
 nettrine.extensions.atlantic18:
@@ -63,7 +63,7 @@ orm.annotations:
         - Gedmo\Tree\Entity
 ```
 
-If you using `nettrine/dbal` all listeners are registered automatically, or you have to register it manually:
+If you are using `nettrine/dbal` all listeners are registered automatically, otherwise you have to register them manually:
 
 ```php
 // Get EventManager, from DI or Entity Manager
