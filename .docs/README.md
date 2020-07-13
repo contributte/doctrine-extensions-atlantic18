@@ -33,16 +33,16 @@ Configure listeners. By default all listeners are disabled, enable only the requ
 
 ```yaml
 nettrine.extensions.atlantic18:
-    loggable: off
-    sluggable: off
-    softDeleteable: off
-    treeable: off
-    blameable: off
-    timestampable: off
-    translatable: off
-    uploadable: off
-    sortable: off
-    ipTraceable: off
+    loggable: false
+    sluggable: false
+    softDeleteable: false
+    treeable: false
+    blameable: false
+    timestampable: false
+    translatable: false
+    uploadable: false
+    sortable: false
+    ipTraceable: false
 ```
 
 ### Loggable, Translatable, Treeable
@@ -54,13 +54,14 @@ extensions:
     orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
 
 orm.annotations:
-    paths:
+    mapping:
         # your app entities
-        - App/Model/Database/Entity
+        App\Model\Database\Entity: %appDir%/Model/Database/Entity
         # doctrine extensions entities
-        - Gedmo\Loggable\Entity
-        - Gedmo\Loggable\Entity
-        - Gedmo\Tree\Entity
+        Gedmo\Translatable: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity
+        Gedmo\Loggable: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity
+        Gedmo\Tree: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity
+        ...
 ```
 
 If you are using `nettrine/dbal` all listeners are registered automatically, otherwise you have to register them manually:
@@ -82,9 +83,9 @@ nettrine.extensions.atlantic18:
     translatable:
         translatable: cs_CZ
         default: cs_CZ
-        translationFallback: off
-        persistDefaultTranslation: off
-        skipOnLoad: off
+        translationFallback: false
+        persistDefaultTranslation: false
+        skipOnLoad: false
 ```
 
 ### [IpTraceable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/ip_traceable.md)
