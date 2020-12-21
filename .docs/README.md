@@ -1,8 +1,8 @@
 # Nettrine Extensions Atlantic18
 
-Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
-
 ## Content
+
+Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
 
 - [Setup](#setup)
 - [Configuration](#configuration)

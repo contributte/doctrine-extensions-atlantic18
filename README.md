@@ -1,26 +1,35 @@
-# Nettrine Extensions Atlantic18
+![](https://heatbadger.now.sh/github/readme/nettrine/extensions-atlantic18/)
 
-Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
+<p align=center>
+  <a href="https://github.com/nettrine/extensions-atlantic18/actions"><img src="https://badgen.net/github/checks/nettrine/extensions-atlantic18/master?cache=300"></a>
+  <a href="https://coveralls.io/r/nettrine/extensions-atlantic18"><img src="https://img.shields.io/coveralls/nettrine/extensions-atlantic18.svg?style=flat-square"></a>
+  <a href="https://github.com/phpstan/phpstan"><img src="https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square"></a>
+  <a href="https://packagist.org/packages/nettrine/extensions-atlantic18"><img src="https://badgen.net/packagist/dm/nettrine/extensions-atlantic18"></a>
+  <a href="https://packagist.org/packages/nettrine/extensions-atlantic18"><img src="https://badgen.net/packagist/v/nettrine/extensions-atlantic18"></a>
+</p>
+<p align=center>
+  <a href="https://packagist.org/packages/nettrine/extensions-atlantic18"><img src="https://badgen.net/packagist/php/nettrine/extensions-atlantic18"></a>
+  <a href="https://github.com/nettrine/extensions-atlantic18"><img src="https://badgen.net/github/license/nettrine/extensions-atlantic18"></a>
+  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
+  <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
+  <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
+</p>
 
-[![Build Status](https://img.shields.io/travis/nettrine/extensions-atlantic18.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions-atlantic18)
-[![Code coverage](https://img.shields.io/coveralls/nettrine/extensions-atlantic18.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions-atlantic18)
-[![Licence](https://img.shields.io/packagist/l/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![Downloads this Month](https://img.shields.io/packagist/dm/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![Downloads total](https://img.shields.io/packagist/dt/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![Latest stable](https://img.shields.io/packagist/v/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+<p align=center>
+Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
+</p>
 
-## Discussion / Help
+## Usage
 
-[![Join the chat](https://img.shields.io/gitter/room/nettrine/nettrine.svg?style=flat-square)](https://gitter.im/nettrine/nettrine)
+To install latest version of `nettrine/extensions-atlantic18` use [Composer](https://getcomposer.com).
 
-## Overview
+```
+composer install nettrine/extensions-atlantic18
+```
 
-- [Setup](.docs/README.md#setup)
-- [Configuration](.docs/README.md#configuration)
-    - [Loggable, Translatable, Treeable](.docs/README.md#loggable-translatable-treeable)
-    - [Translatable](.docs/README.md#translatable)
-    - [IpTraceable](.docs/README.md##iptraceable)
+## Documentation
+
+For details on how to use this package, check out our [documentation](.docs).
 
 ## Versions
 
@@ -32,27 +41,20 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
 | stable      | `^0.3`      | `master` | `2.4`  | `^7.1` | (old namespace) |
 | stable      | `^0.2`      | `master` | `2.4`  | `^5.6` | (old namespace) |
 
-## Maintainers
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/f3l1x">
-            <img width="150" height="150" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=150">
-        </a>
-        </br>
-        <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/mabar">
-            <img width="150" height="150" src="https://avatars0.githubusercontent.com/u/20974277?s=150&v=4">
-        </a>
-        </br>
-        <a href="https://github.com/mabar">Marek Bartoš</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+## Development
 
-Thank you for testing, reporting and contributing.
+See [how to contribute](https://contributte.org) to this package. This package is currently maintained by these authors.
+
+<a href="https://github.com/f3l1x">
+    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
+</a>
+
+<a href="https://github.com/mabar">
+    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/20974277?v=3&s=80">
+</a>
+
+-----
+
+Consider to [support](https://contributte.com/partners) **contributte** development team.
+Also thank you for using this package.
