@@ -2,8 +2,7 @@
 
 <p align=center>
   <a href="https://github.com/nettrine/extensions-atlantic18/actions"><img src="https://badgen.net/github/checks/nettrine/extensions-atlantic18/master?cache=300"></a>
-  <a href="https://coveralls.io/r/nettrine/extensions-atlantic18"><img src="https://img.shields.io/coveralls/nettrine/extensions-atlantic18.svg?style=flat-square"></a>
-  <a href="https://github.com/phpstan/phpstan"><img src="https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square"></a>
+  <a href="https://coveralls.io/r/nettrine/extensions-atlantic18"><img src="https://badgen.net/coveralls/c/github/nettrine/extensions-atlantic18?cache=300"></a>
   <a href="https://packagist.org/packages/nettrine/extensions-atlantic18"><img src="https://badgen.net/packagist/dm/nettrine/extensions-atlantic18"></a>
   <a href="https://packagist.org/packages/nettrine/extensions-atlantic18"><img src="https://badgen.net/packagist/v/nettrine/extensions-atlantic18"></a>
 </p>
@@ -24,7 +23,7 @@ Website ðŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ðŸ‘
 To install latest version of `nettrine/extensions-atlantic18` use [Composer](https://getcomposer.com).
 
 ```
-composer install nettrine/extensions-atlantic18
+composer require nettrine/extensions-atlantic18
 ```
 
 ## Documentation
@@ -33,13 +32,10 @@ For details on how to use this package, check out our [documentation](.docs).
 
 ## Versions
 
-| State       | Version     | Branch   | Nette  | PHP    ||
-|-------------|-------------|----------|--------|--------|-|
-| dev         | `^0.6`      | `master` | `3.0+` | `^7.2` ||
-| stable      | `^0.5`      | `master` | `3.0+` | `^7.2` ||
-| stable      | `^0.4`      | `master` | `3.0+` | `^7.2` | (old namespace) |
-| stable      | `^0.3`      | `master` | `2.4`  | `^7.1` | (old namespace) |
-| stable      | `^0.2`      | `master` | `2.4`  | `^5.6` | (old namespace) |
+| State       | Version | Branch   | Nette  | PHP     |
+|-------------|---------|----------|--------|---------|
+| dev         | `^0.7`  | `master` | `3.0+` | `>=7.2` |
+| stable      | `^0.6`  | `master` | `3.0+` | `>=7.2` |
 
 
 ## Development
@@ -48,10 +44,6 @@ See [how to contribute](https://contributte.org) to this package. This package i
 
 <a href="https://github.com/f3l1x">
     <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
-</a>
-
-<a href="https://github.com/mabar">
-    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/20974277?v=3&s=80">
 </a>
 
 -----

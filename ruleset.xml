@@ -8,7 +8,7 @@
         <properties>
             <property name="rootNamespaces" type="array" value="
                 src   => Nettrine\Extensions\Atlantic18,
-                tests => Tests\Nettrine\Extensions\Atlantic18,
+                tests/cases => Tests\Cases,
             "/>
         </properties>
     </rule>

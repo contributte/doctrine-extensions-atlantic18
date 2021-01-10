@@ -9,28 +9,23 @@
     {
       "name": "Milan Felix Šulc",
       "homepage": "https://f3l1x.io"
-    },
-    {
-      "name": "Josef Benjac",
-      "homepage": "http://josefbenjac.com"
     }
   ],
   "require": {
     "php": ">=7.2",
-    "nette/di": "~3.0.0",
-    "doctrine/orm": "^2.5.0",
+    "nette/di": "^3.0.0",
+    "doctrine/orm": "^2.8.0",
     "doctrine/annotations": "^1.6.0",
-    "gedmo/doctrine-extensions": "^2.4.35"
+    "gedmo/doctrine-extensions": "^3.0.0"
   },
   "require-dev": {
     "nettrine/orm": "^0.8.0",
-    "ninjify/qa": "^0.12.0",
-    "phpstan/extension-installer": "^1.0",
+    "ninjify/qa": "^0.12",
+    "ninjify/nunjuck": "^0.4",
     "phpstan/phpstan": "^0.12",
     "phpstan/phpstan-deprecation-rules": "^0.12",
     "phpstan/phpstan-nette": "^0.12",
-    "phpstan/phpstan-strict-rules": "^0.12",
-    "phpunit/phpunit": "^9.5.0"
+    "phpstan/phpstan-strict-rules": "^0.12"
   },
   "autoload": {
     "psr-4": {
@@ -39,7 +34,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\Nettrine\\Extensions\\Atlantic18\\": "tests"
+      "Tests\\Cases\\": "tests"
     }
   },
   "minimum-stability": "dev",
@@ -49,7 +44,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.6.x-dev"
+      "dev-master": "0.7.x-dev"
     }
   }
 }
