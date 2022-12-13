@@ -4,7 +4,7 @@
   "keywords": ["nette", "doctrine", "orm", "database"],
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/nettrine/extensions-atlantic18",
+  "homepage": "https://github.com/contributte/doctrine-extensions-atlantic18",
   "authors": [
     {
       "name": "Milan Felix Šulc",

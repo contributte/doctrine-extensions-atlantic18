@@ -1,4 +1,4 @@
-# Nettrine Extensions Atlantic18
+# Contributte Doctrine Extensions Atlantic18
 
 ## Content
 
@@ -12,7 +12,7 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
 
 ## Setup
 
-First of all, install and configure [Nettrine DBAL](https://github.com/nettrine/dbal) and [Nettrine ORM](https://github.com/nettrine/orm) packages`.
+First of all, install and configure [nettrine/dbal](https://github.com/contributte/doctrine-dbal) and [nettrine/orm](https://github.com/contributte/doctrine-orm) packages`.
 
 Install package
 
