@@ -23,6 +23,7 @@ use stdClass;
  */
 class Atlantic18BehaviorExtension extends CompilerExtension
 {
+	const TAG_NAME = 'nettrine.extensions.atlantic18.listener';
 
 	public function getConfigSchema(): Schema
 	{
@@ -56,44 +57,44 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 		if ($config->loggable) {
 			$builder->addDefinition($this->prefix('loggable'))
 				->setFactory(LoggableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->sluggable) {
 			$builder->addDefinition($this->prefix('sluggable'))
 				->setFactory(SluggableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->softDeleteable) {
 			$builder->addDefinition($this->prefix('softDeleteable'))
 				->setFactory(SoftDeleteableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->treeable) {
 			$builder->addDefinition($this->prefix('treeable'))
 				->setFactory(TreeListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->blameable) {
 			$builder->addDefinition($this->prefix('blameable'))
 				->setFactory(BlameableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->timestampable) {
 			$builder->addDefinition($this->prefix('timestampable'))
 				->setFactory(TimestampableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->translatable !== false) {
 			$translatableConfig = $config->translatable;
 			$builder->addDefinition($this->prefix('translatable'))
 				->setFactory(TranslatableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NAME)
 				->addSetup('setDefaultLocale', [$translatableConfig->default])
 				->addSetup('setTranslatableLocale', [$translatableConfig->translatable])
 				->addSetup('setPersistDefaultLocaleTranslation', [$translatableConfig->translationFallback])
@@ -104,14 +105,26 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 		if ($config->sortable) {
 			$builder->addDefinition($this->prefix('sortable'))
 				->setFactory(SortableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				->addTag(self::TAG_NAME);
 		}
 
 		if ($config->ipTraceable !== false) {
 			$builder->addDefinition($this->prefix('ipTraceable'))
 				->setFactory(IpTraceableListener::class)
-				->addSetup('setAnnotationReader', ['@' . Reader::class])
+				->addTag(self::TAG_NAME)
 				->addSetup('setIpValue', [$config->ipTraceable->ipValue]);
+		}
+	}
+
+	public function beforeCompile()
+	{
+		$builder = $this->getContainerBuilder();
+
+		if ($builder->getByType(Reader::class)) {
+			foreach ($builder->findByTag(self::TAG_NAME) as $serviceName => $tagValue) {
+				$builder->getDefinition($serviceName)
+					->addSetup('setAnnotationReader', ['@' . Reader::class]);
+			}
 		}
 	}
 
