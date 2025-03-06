@@ -20,12 +20,12 @@
   },
   "require-dev": {
     "nettrine/orm": "^0.10",
-    "ninjify/qa": "^0.12",
+    "ninjify/qa": "^0.13",
     "ninjify/nunjuck": "^0.4",
-    "phpstan/phpstan": "^0.12",
-    "phpstan/phpstan-deprecation-rules": "^0.12",
-    "phpstan/phpstan-nette": "^0.12",
-    "phpstan/phpstan-strict-rules": "^0.12"
+    "phpstan/phpstan": "^2.0",
+    "phpstan/phpstan-deprecation-rules": "^2.0",
+    "phpstan/phpstan-nette": "^2.0",
+    "phpstan/phpstan-strict-rules": "^2.0"
   },
   "autoload": {
     "psr-4": {
