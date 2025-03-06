@@ -13,13 +13,33 @@ use Gedmo\Timestampable\TimestampableListener;
 use Gedmo\Translatable\TranslatableListener;
 use Gedmo\Tree\TreeListener;
 use Nette\DI\CompilerExtension;
+use Nette\DI\Definitions\ServiceDefinition;
 use Nette\DI\Definitions\Statement;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
 use stdClass;
 
 /**
- * @property-read stdClass $config
+ * @property-read object{
+ *   loggable: bool,
+ *   sluggable: bool,
+ *   softDeleteable: bool,
+ *   treeable: bool,
+ *   blameable: bool,
+ *   timestampable: bool,
+ *   translatable: object{
+ *      translatable: string,
+ *      default: string,
+ *      translationFallback: bool,
+ *      persistDefaultTranslation: bool,
+ *      skipOnLoad: bool
+ *   }|false,
+ *   uploadable: bool,
+ *   sortable: bool,
+ *   ipTraceable: object{
+ *      ipValue: string|array<string>
+ *   }|false
+ * } $config
  */
 class Atlantic18BehaviorExtension extends CompilerExtension
 {
@@ -120,10 +140,11 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 
-		if ($builder->getByType(Reader::class)) {
+		if ($builder->getByType(Reader::class) !== null) {
 			foreach ($builder->findByTag(self::TAG_NAME) as $serviceName => $tagValue) {
-				$builder->getDefinition($serviceName)
-					->addSetup('setAnnotationReader', ['@' . Reader::class]);
+				/** @var ServiceDefinition $definition */
+				$definition = $builder->getDefinition($serviceName);
+				$definition->addSetup('setAnnotationReader', ['@' . Reader::class]);
 			}
 		}
 	}
