@@ -14,12 +14,12 @@
   "require": {
     "php": ">=7.2",
     "nette/di": "^3.0.0",
-    "doctrine/orm": "^2.8.0",
-    "doctrine/annotations": "^1.6.0",
-    "gedmo/doctrine-extensions": "^3.0.3"
+    "doctrine/orm": "^3.0",
+    "doctrine/annotations": "^2.0",
+    "gedmo/doctrine-extensions": "^3.19"
   },
   "require-dev": {
-    "nettrine/orm": "^0.8.0",
+    "nettrine/orm": "^0.10",
     "ninjify/qa": "^0.12",
     "ninjify/nunjuck": "^0.4",
     "phpstan/phpstan": "^0.12",
