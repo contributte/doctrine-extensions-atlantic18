@@ -51,17 +51,26 @@ Setup extra entity mapping.
 
 ```yaml
 extensions:
-    orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
+    nettrine.orm: Nettrine\ORM\DI\OrmExtension
 
-orm.annotations:
-    mapping:
-        # your app entities
-        App\Model\Database\Entity: %appDir%/Model/Database/Entity
-        # doctrine extensions entities
-        Gedmo\Translatable: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity
-        Gedmo\Loggable: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity
-        Gedmo\Tree: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity
-        ...
+
+nettrine.orm:
+    managers:
+        default:
+          mapping:
+              App:
+                  directories:
+                      - %appDir%/Model/Database/Entity
+              # doctrine extensions entities
+              Translatable:
+                  directories:
+                      - %appDir%/../vendor/gedmo/doctrine-extensions/src/Translatable/Entity
+                  namespace: Gedmo\Translatable\Entity
+              Loggable:
+                  directories:
+                      - %appDir%/../vendor/gedmo/doctrine-extensions/src/Loggable/Entity
+             ...
+
 ```
 
 If you are using `nettrine/dbal` all listeners are registered automatically, otherwise you have to register them manually:

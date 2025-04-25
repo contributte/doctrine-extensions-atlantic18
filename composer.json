@@ -12,10 +12,9 @@
     }
   ],
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.2",
     "nette/di": "^3.0.0",
     "doctrine/orm": "^3.0",
-    "doctrine/annotations": "^2.0",
     "gedmo/doctrine-extensions": "^3.19"
   },
   "require-dev": {
