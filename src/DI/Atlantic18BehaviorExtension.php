@@ -2,7 +2,6 @@
 
 namespace Nettrine\Extensions\Atlantic18\DI;
 
-use Doctrine\Common\Annotations\Reader;
 use Gedmo\Blameable\BlameableListener;
 use Gedmo\IpTraceable\IpTraceableListener;
 use Gedmo\Loggable\LoggableListener;
@@ -13,11 +12,9 @@ use Gedmo\Timestampable\TimestampableListener;
 use Gedmo\Translatable\TranslatableListener;
 use Gedmo\Tree\TreeListener;
 use Nette\DI\CompilerExtension;
-use Nette\DI\Definitions\ServiceDefinition;
 use Nette\DI\Definitions\Statement;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
-use stdClass;
 
 /**
  * @property-read object{
@@ -43,7 +40,8 @@ use stdClass;
  */
 class Atlantic18BehaviorExtension extends CompilerExtension
 {
-	const TAG_NAME = 'nettrine.extensions.atlantic18.listener';
+
+	public const TAG_NAME = 'nettrine.extensions.atlantic18.listener';
 
 	public function getConfigSchema(): Schema
 	{
@@ -133,19 +131,6 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 				->setFactory(IpTraceableListener::class)
 				->addTag(self::TAG_NAME)
 				->addSetup('setIpValue', [$config->ipTraceable->ipValue]);
-		}
-	}
-
-	public function beforeCompile()
-	{
-		$builder = $this->getContainerBuilder();
-
-		if ($builder->getByType(Reader::class) !== null) {
-			foreach ($builder->findByTag(self::TAG_NAME) as $serviceName => $tagValue) {
-				/** @var ServiceDefinition $definition */
-				$definition = $builder->getDefinition($serviceName);
-				$definition->addSetup('setAnnotationReader', ['@' . Reader::class]);
-			}
 		}
 	}
 
