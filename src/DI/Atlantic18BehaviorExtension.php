@@ -17,7 +17,6 @@ use Nette\DI\Definitions\ServiceDefinition;
 use Nette\DI\Definitions\Statement;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
-use stdClass;
 
 /**
  * @property-read object{
@@ -43,7 +42,8 @@ use stdClass;
  */
 class Atlantic18BehaviorExtension extends CompilerExtension
 {
-	const TAG_NAME = 'nettrine.extensions.atlantic18.listener';
+
+	public const TAG_NAME = 'nettrine.extensions.atlantic18.listener';
 
 	public function getConfigSchema(): Schema
 	{
@@ -136,7 +136,7 @@ class Atlantic18BehaviorExtension extends CompilerExtension
 		}
 	}
 
-	public function beforeCompile()
+	public function beforeCompile(): void
 	{
 		$builder = $this->getContainerBuilder();
 
