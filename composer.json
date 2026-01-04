@@ -1,7 +1,7 @@
 {
   "name": "nettrine/extensions-atlantic18",
   "description": "Doctrine2 behavioral extensions for Nette Framework",
-  "keywords": ["nette", "doctrine", "orm", "database"],
+  "keywords": ["nette", "doctrine", "orm", "database", "gedmo"],
   "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/contributte/doctrine-extensions-atlantic18",
@@ -12,20 +12,16 @@
     }
   ],
   "require": {
-    "php": ">=8.3",
-    "nette/di": "^3.0.0",
-    "doctrine/orm": "^3.0",
-    "doctrine/annotations": "^2.0",
-    "gedmo/doctrine-extensions": "^3.19"
+    "php": ">=8.2",
+    "doctrine/annotations": "^2.0.0",
+    "doctrine/orm": "^3.0.0",
+    "gedmo/doctrine-extensions": "^3.19.0",
+    "nette/di": "^3.2.0"
   },
   "require-dev": {
-    "nettrine/orm": "^0.10",
-    "ninjify/qa": "^0.13",
-    "ninjify/nunjuck": "^0.4",
-    "phpstan/phpstan": "^2.0",
-    "phpstan/phpstan-deprecation-rules": "^2.0",
-    "phpstan/phpstan-nette": "^2.0",
-    "phpstan/phpstan-strict-rules": "^2.0"
+    "contributte/phpstan": "^0.2.0",
+    "contributte/qa": "^0.4.0",
+    "contributte/tester": "^0.3.0"
   },
   "autoload": {
     "psr-4": {
@@ -34,7 +30,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\Cases\\": "tests"
+      "Tests\\": "tests"
     }
   },
   "minimum-stability": "dev",
