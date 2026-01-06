@@ -1,37 +1,42 @@
 # Contributte Doctrine Extensions Atlantic18
 
+Integration of [Gedmo/DoctrineExtensions](https://github.com/doctrine-extensions/DoctrineExtensions) (Atlantic18) for Nette Framework.
+
 ## Content
 
-Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
-
-- [Setup](#setup)
+- [Installation](#installation)
 - [Configuration](#configuration)
-    - [Loggable, Translatable, Treeable](#loggable-translatable-treeable)
-    - [Translatable](#translatable)
-    - [IpTraceable](#iptraceable)
+  - [Listeners](#listeners)
+  - [Translatable](#translatable)
+  - [IpTraceable](#iptraceable)
+- [Entity mapping](#entity-mapping)
+- [Examples](#examples)
 
-## Setup
+## Installation
 
-First of all, install and configure [nettrine/dbal](https://github.com/contributte/doctrine-dbal) and [nettrine/orm](https://github.com/contributte/doctrine-orm) packages`.
-
-Install package
+Install package using composer.
 
 ```bash
 composer require nettrine/extensions-atlantic18
 ```
 
-Register extension
+Register prepared [compiler extension](https://doc.nette.org/en/dependency-injection/nette-container) in your `config.neon` file.
 
-```yaml
+```neon
 extensions:
     nettrine.extensions.atlantic18: Nettrine\Extensions\Atlantic18\DI\Atlantic18BehaviorExtension
 ```
 
+> [!NOTE]
+> This extension requires [nettrine/dbal](https://github.com/contributte/doctrine-dbal) and [nettrine/orm](https://github.com/contributte/doctrine-orm) to be installed and configured.
+
 ## Configuration
 
-Configure listeners. By default all listeners are disabled, enable only the required ones.
+### Listeners
 
-```yaml
+By default, all listeners are disabled. Enable only the ones you need.
+
+```neon
 nettrine.extensions.atlantic18:
     loggable: false
     sluggable: false
@@ -45,55 +50,143 @@ nettrine.extensions.atlantic18:
     ipTraceable: false
 ```
 
-### Loggable, Translatable, Treeable
+Here is the list of all available options with their types.
 
-Setup extra entity mapping.
-
-```yaml
-extensions:
-    orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
-
-orm.annotations:
-    mapping:
-        # your app entities
-        App\Model\Database\Entity: %appDir%/Model/Database/Entity
-        # doctrine extensions entities
-        Gedmo\Translatable: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity
-        Gedmo\Loggable: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity
-        Gedmo\Tree: %appDir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity
-        ...
+```neon
+nettrine.extensions.atlantic18:
+    loggable: <bool>
+    sluggable: <bool>
+    softDeleteable: <bool>
+    treeable: <bool>
+    blameable: <bool>
+    timestampable: <bool>
+    translatable: <bool|structure>
+    uploadable: <bool>
+    sortable: <bool>
+    ipTraceable: <bool|structure>
 ```
 
-If you are using `nettrine/dbal` all listeners are registered automatically, otherwise you have to register them manually:
+For example, enable timestampable and sluggable:
 
-```php
-// Get EventManager, from DI or Entity Manager
-$evm = $em->getEventManager();
-
-// Register desired listener to event
-$evm->addEventSubscriber($listener);
-
+```neon
+nettrine.extensions.atlantic18:
+    timestampable: true
+    sluggable: true
 ```
-### [Translatable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/translatable.md)
+
+> [!TIP]
+> Take a look at more information in official Gedmo documentation:
+> - https://github.com/doctrine-extensions/DoctrineExtensions/tree/main/doc
+
+### Translatable
 
 TranslatableListener has a complex configuration:
 
-```yaml
+```neon
 nettrine.extensions.atlantic18:
     translatable:
         translatable: cs_CZ
-        default: cs_CZ
+        default: en_US
         translationFallback: false
         persistDefaultTranslation: false
         skipOnLoad: false
 ```
 
-### [IpTraceable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/ip_traceable.md)
+| Option | Type | Description |
+|--------|------|-------------|
+| `translatable` | `string` | Current locale for translations |
+| `default` | `string` | Default locale |
+| `translationFallback` | `bool` | Use fallback locale if translation not found |
+| `persistDefaultTranslation` | `bool` | Persist default locale translation |
+| `skipOnLoad` | `bool` | Skip translations on entity load |
+
+> [!TIP]
+> Take a look at more information in official Gedmo documentation:
+> - https://github.com/doctrine-extensions/DoctrineExtensions/blob/main/doc/translatable.md
+
+### IpTraceable
 
 IpTraceable requires client IP address:
 
-```
+```neon
 nettrine.extensions.atlantic18:
     ipTraceable:
         ipValue: @Nette\Http\IRequest::getRemoteAddress()
 ```
+
+Or provide a static IP:
+
+```neon
+nettrine.extensions.atlantic18:
+    ipTraceable:
+        ipValue: '127.0.0.1'
+```
+
+> [!TIP]
+> Take a look at more information in official Gedmo documentation:
+> - https://github.com/doctrine-extensions/DoctrineExtensions/blob/main/doc/ip_traceable.md
+
+## Entity mapping
+
+Gedmo 3.x uses **PHP 8 attributes** for entity mapping. No additional configuration is required.
+
+```php
+<?php declare(strict_types = 1);
+
+namespace App\Model\Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+
+#[ORM\Entity]
+class Article
+{
+
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
+    private int $id;
+
+    #[ORM\Column(type: 'string')]
+    private string $title;
+
+    #[ORM\Column(type: 'string', unique: true)]
+    #[Gedmo\Slug(fields: ['title'])]
+    private string $slug;
+
+    #[ORM\Column(type: 'datetime')]
+    #[Gedmo\Timestampable(on: 'create')]
+    private \DateTime $createdAt;
+
+    #[ORM\Column(type: 'datetime')]
+    #[Gedmo\Timestampable(on: 'update')]
+    private \DateTime $updatedAt;
+
+}
+```
+
+For **Loggable**, **Translatable**, and **Tree** behaviors, you need to set up extra entity mapping:
+
+```neon
+nettrine.orm:
+    entityManagerDecoratorClass: Nettrine\ORM\EntityManagerDecorator
+    configuration:
+        driver: pdo_pgsql
+        ...
+
+    dql:
+        ...
+
+services:
+    # Register Gedmo entity paths
+    nettrine.orm.xmlDriver:
+        setup:
+            - addPaths([%vendorDir%/gedmo/doctrine-extensions/src/Translatable/Entity])
+            - addPaths([%vendorDir%/gedmo/doctrine-extensions/src/Loggable/Entity])
+            - addPaths([%vendorDir%/gedmo/doctrine-extensions/src/Tree/Entity])
+```
+
+## Examples
+
+> [!TIP]
+> Take a look at more examples in [contributte/doctrine](https://github.com/contributte/doctrine/tree/master/.docs).
