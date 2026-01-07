@@ -14,7 +14,7 @@ class DummyEntity
 {
 
 	#[ORM\Id]
-	#[ORM\GeneratedValue]
+	#[ORM\GeneratedValue(strategy: 'IDENTITY')]
 	#[ORM\Column(type: Types::INTEGER)]
 	private int $id;
 
@@ -43,6 +43,11 @@ class DummyEntity
 
 	#[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
 	private ?DateTimeImmutable $deletedAt = null;
+
+	public function __construct(string $title)
+	{
+		$this->title = $title;
+	}
 
 	public function getId(): int
 	{
